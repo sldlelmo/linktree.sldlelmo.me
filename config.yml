@@ -1,0 +1,17 @@
+name: "sldlelmo"
+picture: "picture.jpg" # paste an img at root of project or an image source url
+bio: "I'll add more links later."
+meta:
+  lang: "en"
+  description: "funky"
+  title: "linktree.sldlelmo.me"
+  author: "sldlelmo"
+  siteUrl: "https://linktree.sldlelmo.me"
+links:
+  - name: "Github"
+    url: "https://github.com/sldlelmo"
+  - name: "Discord - User Link"
+    url: "https://discord.com/users/471006361577193472"
+  - name: "Discord - sldleland"
+    url: "https://discord.gg/3H9Xh7pKvw"
+theme: "custom"
