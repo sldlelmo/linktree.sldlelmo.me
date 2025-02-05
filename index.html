@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
+    <script>
+      // 3DS / Wii U Check #1
+      // Reduced Motion Check
+      // By Gemini AI
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        windows.location.href = "./no-css"
+      }
+
+      // 3DS / Wii U Check #2
+      // userAgent Check
+      // By Gemini AI
+      if (navigator.userAgent.indexOf("Nintendo 3DS") > -1 || navigator.userAgent.indexOf("Nintendo WiiU") > -1) {
+        windows.location.href = "./no-css"
+      }
+    </script>
     <!-- Favicon -->
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Blue_circled_9.svg/220px-Blue_circled_9.svg.png" type="image/x-icon" />
     <!-- Font Awesome icons -->
