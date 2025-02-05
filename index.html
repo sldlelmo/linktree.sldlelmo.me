@@ -4,33 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
-    <script>
-      // By Gemini AI
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Blue_circled_9.svg/220px-Blue_circled_9.svg.png" type="image/x-icon" />
+
+    <style>
+        /* Default styles */
+        body {
+            font-family: sans-serif;
+        }
+
+        /* Media query for reduced motion (older devices) */
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                font-size: 14px; /* Example: smaller font */
+                /* ... other simplified styles ... */
+                background-color: #fff; /* Example: a solid background color */
+                /* Remove animations, transitions, anything resource-intensive */
+                animation: none !important;
+                transition: none !important;
+            }
+
+            /* Target specific elements within the reduced-motion media query */
+            #message {
+                font-size: 1rem; /* Example: adjust font size for smaller screens */
+            }
+
+            /* ... other reduced-motion/older device styles ... */
+        }
+
+        /* Media queries for different screen sizes (responsive design) */
+        @media (max-width: 768px) {
+            /* Styles for smaller screens */
+        }
+
+        #message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./style.css">  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"> <script>
+      document.addEventListener('DOMContentLoaded', function() {
       const userAgent = navigator.userAgent;
       let deviceName = "";
       let simplifiedVersion = "";
-  
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.userAgent.match(/Nintendo (3DS|WiiU)/)) {
+      let isNintendoDevice = false; // Flag to track if it's a Nintendo device
+
+      if (navigator.userAgent.match(/Nintendo (3DS|WiiU)/)) {
         deviceName = userAgent.replace(/.*Nintendo /, '');
         simplifiedVersion = "./3DS";
+        isNintendoDevice = true; // Set the flag
       } else if (navigator.userAgent.match(/Nintendo (DS|DSi|Wii)/)) {
         deviceName = userAgent.replace(/.*Nintendo /, '');
         simplifiedVersion = "./no-css";
+        isNintendoDevice = true; // Set the flag
       }
-      if (!deviceName) {
-        deviceName = "Unknown";
-      }
-      if (deviceName) {
+
+      if (isNintendoDevice || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { // Check the flag OR reduced motion
+        if (!deviceName) {
+          deviceName = "Unknown";
+        }
         document.getElementById("message").innerHTML = `<p>It looks like you're using a ${deviceName}. For a better experience, please visit our <a href="${simplifiedVersion}">simplified version</a>.</p>`;
         document.getElementById("message").style.display = "block";
       }
+    });
     </script>
-    <!-- Favicon -->
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Blue_circled_9.svg/220px-Blue_circled_9.svg.png" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
