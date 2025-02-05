@@ -6,4 +6,4 @@
 - 3DS (/3DS)
 ## Untested
 - Wii U (/3DS)
-- DS / DSi / Wii
+- DS / DSi / Wii (/no-css)
