@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
     <script>
-      // 3DS / Wii U Check #1
-      // Reduced Motion Check
       // By Gemini AI
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.location.href = "./3DS"
+      const userAgent = navigator.userAgent;
+      let deviceName = "";
+      let simplifiedVersion = "";
+  
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.userAgent.match(/Nintendo (3DS|WiiU)/)) {
+        deviceName = userAgent.replace(/.*Nintendo /, '');
+        simplifiedVersion = "./3DS";
+      } else if (navigator.userAgent.match(/Nintendo (DS|DSi|Wii)/)) {
+        deviceName = userAgent.replace(/.*Nintendo /, '');
+        simplifiedVersion = "./no-css";
       }
-
-      // 3DS / Wii U Check #2
-      // userAgent Check
-      // By Gemini AI
-      if (navigator.userAgent.indexOf("Nintendo 3DS") > -1 || navigator.userAgent.indexOf("Nintendo WiiU") > -1) {
-        window.location.href = "./3DS"
+      if (!deviceName) {
+        deviceName = "Unknown";
+      }
+      if (deviceName) {
+        document.getElementById("message").innerHTML = `<p>It looks like you're using a ${deviceName}. For a better experience, please visit our <a href="${simplifiedVersion}">simplified version</a>.</p>`;
+        document.getElementById("message").style.display = "block";
       }
     </script>
     <!-- Favicon -->
@@ -28,6 +34,7 @@
   </head>
 
   <body>
+    <div id="message"></div>
     <a id="profilePicture">
       <img src="https://media.tenor.com/qv9AZ2UJkCAAAAAM/funky-cirno.gif" alt="Gif of a Spinning Cirno Fumo">
     </a>
