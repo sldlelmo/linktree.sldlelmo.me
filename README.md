@@ -2,8 +2,8 @@
 - The repo for linktree.sldlelmo.me
 # What does this work on?
 - Browsers with modern CSS support
+- Windows 11 ~ Vista
 ## Tested
-- 3DS (/3DS)
+- 3DS (/simple-css)
 ## Untested
-- Wii U (/3DS)
-- DS / DSi / Wii (/no-css)
+- Wii U (/simple-css)

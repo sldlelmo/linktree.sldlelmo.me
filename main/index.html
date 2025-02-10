@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>linktree.sldlelmo.me/jp</title>
+    <title>/main</title>
     <!-- Favicon -->
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Blue_circled_9.svg/220px-Blue_circled_9.svg.png" type="image/x-icon" />
     <!-- Font Awesome icons -->
@@ -14,56 +14,60 @@
 
   <body>
     <a id="profilePicture">
-      <img src="https://media.tenor.com/qv9AZ2UJkCAAAAAM/funky-cirno.gif" alt="チルノフーモが回転するアニメーション画像">
+      <img src="https://media.tenor.com/qv9AZ2UJkCAAAAAM/funky-cirno.gif" alt="Gif of a Spinning Cirno Fumo">
     </a>
 
     <div id="userName">
       linktree.sldlelmo.me
     </div>
     <div id="userName">
-      /jp - 
-      <a href="../" style="color: white;">
-        [戻る]
-      </a>
+      /main - 
+      <select id="language-select" style="font-family: var(--font);">
+        <option value="en">English</option>
+        <option value="jp" title="Japanese">日本語</option>
+        <option value="ru" title="Russian">Русский</option>
+        <option value="tok">toki pona</option>
+      </select>
     </div>
 
     <div id="links">
       <a class="link" href="https://github.com/sldlelmo" target="_blank">
-        <i class="fab fa-github">&nbsp;</i>ギットハブ (@sldlelmo)
+        <i class="fab fa-github">&nbsp;</i><x id="github">Github (@sldlelmo)</x>
       </a>
       <a class="link" href="https://app.glosbe.com/profile/7236022214640796289" target="_blank">
-        <i class="fas fa-globe">&nbsp;</i>グローベ (@sldlelmo)
+        <i class="fas fa-globe">&nbsp;</i><x id="glosbe">Glosbe (@sldlelmo)</x>
       </a>
       <a class="link" href="https://roblox.com/users/938172080" target="_blank">
-        <i class="fas fa-gamepad">&nbsp;</i>ロブロックス (@sldlelmo)
+        <i class="fas fa-gamepad">&nbsp;</i><x id="roblox">Roblox (@sldlelmo)</x>
       </a>
       <a class="link" href="https://steamcommunity.com/id/sldlelmo/" target="_blank">
-        <i class="fab fa-steam">&nbsp;</i>スチーム (@sldlelmo)
+        <i class="fab fa-steam">&nbsp;</i><x id="steam">Steam (@sldlelmo)</x>
       </a>
       <a class="link" href="https://twitch.tv/sldlelmo" target="_blank">
-        <i class="fab fa-twitch">&nbsp;</i>トウィッチ (@sldlelmo)
+        <i class="fab fa-twitch">&nbsp;</i><x id="twitch">Twitch (@sldlelmo)</x>
       </a>
       <a class="link" href="https://www.youtube.com/@sldlelmo" target="_blank">
-        <i class="fab fa-youtube">&nbsp;</i>ようつべ (@sldlelmo)
+        <i class="fab fa-youtube">&nbsp;</i><x id="youtube">Youtube (@sldlelmo)</x>
       </a>
       <a class="link" href="https://www.youtube.com/@sldlelmo2" target="_blank">
-        <i class="fab fa-youtube">&nbsp;</i>ようつべ (@sldlelmo2)
+        <i class="fab fa-youtube">&nbsp;</i><x id="youtube2">Youtube (@sldlelmo2)</x>
       </a>
       <a class="link" href="https://spoti.fi/3UJqoAH" target="_blank">
-        <i class="fab fa-spotify">&nbsp;</i>スポティファイ
+        <i class="fab fa-spotify">&nbsp;</i><x id="spotify">Spotify</x>
       </a>
       <a class="link" href="https://discord.com/users/471006361577193472" target="_blank">
-        <i class="fas fa-at">&nbsp;</i>ディスコード (@sldlelmo)
+        <i class="fas fa-at">&nbsp;</i><x id="discord">Discord (@sldlelmo)</x>
       </a>
       <a class="link" href="https://discord.com/users/1334326056953450537" target="_blank">
-        <i class="fas fa-at">&nbsp;</i>ディスコード (@sldlelmo.me)
+        <i class="fas fa-at">&nbsp;</i><x id="discord2">Discord (@sldlelmo.me)</x>
       </a>
       <a class="link" href="https://discord.gg/3H9Xh7pKvw" target="_blank">
-        <i class="fas fa-comments">&nbsp;</i>ディスコードサーバー (sldleland)
+        <i class="fas fa-comments">&nbsp;</i><x id="sldleland">Discord Server - sldleland</x>
       </a>
       <a class="link" href="https://www.last.fm/user/sldlelmo" target="_blank">
-        <i class="fas fa-music">&nbsp;</i>last.fm (@sldlelmo)
+        <i class="fas fa-music">&nbsp;</i><x id="last.fm">last.fm (@sldlelmo)</x>
       </a>
     </div>
+    <script src="../scripts/lang.js"></script>
   </body>
 </html>

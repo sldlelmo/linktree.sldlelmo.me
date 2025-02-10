@@ -5,50 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
     <script>
-      // 3DS / Wii U Check #1
-      // Reduced Motion Check
-      // By Gemini AI
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.location.href = "./3DS"
+      // 3DS / Wii U Check #1 / #2
+      // Reduced Motion Check / userAgent Check
+      // AKA PRM Check / UA Check
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || /Nintendo (3DS|WiiU)/.test(navigator.userAgent)) {
+        window.location.href = "./simple-css"
+      } else {
+        console.log("3DS / Wii U - PRM/UA Check:", false)
       }
 
-      // 3DS / Wii U Check #2
+      // Windows Vista #1 (Not Great)
       // userAgent Check
-      // By Gemini AI
-      if (navigator.userAgent.indexOf("Nintendo 3DS") > -1 || navigator.userAgent.indexOf("Nintendo WiiU") > -1) {
-        window.location.href = "./3DS"
+      // AKA UA Check
+      if (/Windows (NT 6\.0)/.test(navigator.userAgent)) {
+        window.location.href = "./simple-css"
+      } else {
+        console.log("Windows Vista - UA Check:", false)
       }
+
+      window.location.href = "./main"
     </script>
-    <!-- Favicon -->
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Blue_circled_9.svg/220px-Blue_circled_9.svg.png" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" href="./style.css">
   </head>
-
   <body>
-    <a id="profilePicture">
-      <img src="https://media.tenor.com/qv9AZ2UJkCAAAAAM/funky-cirno.gif" alt="Gif of a Spinning Cirno Fumo">
-    </a>
-
-    <div id="userName">
-      Language Selector
-    </div>
-    <div id="userName">
-      /
-    </div>
-
-    <div id="links">
-      <a class="link" href="./en">
-        <i class="fas fa-globe">&nbsp;</i>English<br>/en
-      </a>
-      <a class="link" href="./jp">
-        <i class="fas fa-globe">&nbsp;</i>日本語 (Japanese)<br>/jp
-      </a>
-      <a class="link" href="./no-css" style="font-family: '';">
-        <i class="fas fa-font">&nbsp;</i>No CSS<br>/no-css
-      </a>
-    </div>
+    Something failed when attempting to run the JavaScript.<br>
+    Please go to <a href="./no-css">no-css</a> to view this site or attempt to reload the page.
   </body>
 </html>
