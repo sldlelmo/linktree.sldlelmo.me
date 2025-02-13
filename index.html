@@ -5,25 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
     <script>
+      // Debug Mode (?debug=true)
+      let debug = new URLSearchParams(window.location.search).has('debug');
+
+      console.log("Debug Mode Enabled.")
+
+      console.log( "matchMedia", 
+        {
+          "PRM": window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        }
+      )
+      console.log("navigator.userAgent", {
+        "Nintendo 3DS": /Nintendo 3DS/.test(navigator.userAgent),
+        "Nintendo WiiU": /Nintendo WiiU/.test(navigator.userAgent),
+        "Windows NT 6.0": /Windows (NT 6\.0)/.test(navigator.userAgent)
+
+      })
+
       // 3DS / Wii U Check #1 / #2
       // Reduced Motion Check / userAgent Check
       // AKA PRM Check / UA Check
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || /Nintendo (3DS|WiiU)/.test(navigator.userAgent)) {
-        window.location.href = "./simple-css"
-      } else {
-        console.log("3DS / Wii U - PRM/UA Check:", false)
+        if (!debug) {
+          window.location.href = "./simple-css"
+        }
       }
 
       // Windows Vista #1 (Not Great)
       // userAgent Check
       // AKA UA Check
       if (/Windows (NT 6\.0)/.test(navigator.userAgent)) {
-        window.location.href = "./simple-css"
-      } else {
-        console.log("Windows Vista - UA Check:", false)
+        if (!debug) {
+          window.location.href = "./simple-css"
+        }
       }
 
-      window.location.href = "./main"
+      if (!debug) {
+        window.location.href = "./main"
+      }
     </script>
   </head>
   <body>
